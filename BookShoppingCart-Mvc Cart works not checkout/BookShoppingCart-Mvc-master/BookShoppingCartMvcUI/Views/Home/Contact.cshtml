@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<div class="col-md-6 col-md-offset-2">
+    <h3>Send Us a Message</h3>
+    @if (User.IsInRole("Admin"))
+    {
+
+        <p><h4>Contact: <a href="mailto:marie.sauve@triosstudent.com">marie.sauve@triosstudent.com</a></h4></p>
+    }
+
+    <p>
+        <h3>Login to email  <i class="fa-regular fa-envelope"></i></h3>
+
+    </p>
+
+</div>
