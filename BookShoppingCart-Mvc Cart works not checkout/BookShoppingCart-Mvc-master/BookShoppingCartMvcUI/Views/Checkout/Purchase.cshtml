@@ -1,0 +1,25 @@
+﻿@model BookShoppingCartMvcUI.Models.Book
+
+@{
+    ViewData["Title"] = "Purchase";
+}
+
+<div class="wrapper">
+    <div class="checkout container">
+        <form id="payment-form" method="post" asp-controller="Home" asp-action="GetUserCart">
+            @Html.HiddenFor(n => n.Id)
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title" name="Title" asp-for="@Model.BookName">@Model.BookName</h5>
+                    
+                    <p class="card-text"><small class="text-muted">Author: @Model.AuthorName</small></p>
+                    <p class="card-text"><small class="text-muted">Price: @Model.Price</small></p>
+                </div>
+                <img style="width: 90%" class="card-img-bottom" src="@Model.Image" alt="Card image cap">
+            </div>
+            <hr />
+            <button class="btn btn-success" type="submit"><span>Confirm payment - $@Model.Price</span></button>
+            
+        </form>
+    </div>
+</div>

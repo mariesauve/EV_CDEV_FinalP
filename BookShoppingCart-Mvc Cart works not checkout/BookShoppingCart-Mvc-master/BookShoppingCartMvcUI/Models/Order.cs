@@ -16,5 +16,7 @@ namespace BookShoppingCartMvcUI.Models
 
         public OrderStatus OrderStatus { get; set; }
         public List<OrderDetail> OrderDetail { get; set; }
+        [NotMapped]
+        public object TotalPrice { get; internal set; }
     }
 }

@@ -35,12 +35,17 @@ namespace BookShoppingCartMvcUI.Controllers
             return View();
         }
 
-        public IActionResult Checkout()
+        public IActionResult Order()
         {
             return View();
         }
 
         public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult UserOrders()
         {
             return View();
         }

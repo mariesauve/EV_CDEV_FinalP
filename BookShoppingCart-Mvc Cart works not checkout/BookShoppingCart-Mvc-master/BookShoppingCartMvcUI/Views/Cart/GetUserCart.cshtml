@@ -45,14 +45,19 @@
 
         <div class="my-2">
             <h5>Total(CD): </h5>
-           @*  @(Model.CartDetails.Select(item => item.Book.Price * item.Quantity).Sum()) *@
+        
             @string.Format("{0:0.00}", Model.CartDetails.Select(item => item.Book.Price * item.Quantity).Sum())
         </div>
 
         <div class="my-2">
-            <a class="btn btn-primary" href="/Cart/Checkout"><i class="fa-solid fa-bag-shopping"></i>   Checkout</a>
+            <a class="btn btn-primary" href="@Url.Action("Checkout", "Cart")"><i class="fa-solid fa-bag-shopping"></i>   Checkout</a>
         </div>
-
+     
+        
+@*         <div class="my-2">
+            <a class="btn btn-primary" href="@Url.Action("Checkout", "Cart")"><i class="fa-solid fa-bag-shopping"></i> Checkout</a>
+        </div>
+ *@
     }
     else
     {

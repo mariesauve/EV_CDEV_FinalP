@@ -31,34 +31,24 @@ namespace BookShoppingCartMvcUI.Controllers
             return View(cart);
         }
 
-        public  async Task<IActionResult> GetTotalItemInCart()
+        public async Task<IActionResult> GetTotalItemInCart()
         {
             int cartItem = await _cartRepo.GetCartItemCount();
             return Ok(cartItem);
         }
 
-        //public async Task<IActionResult> Checkout()
-        //{
-        //    bool isCheckedOut = await _cartRepo.DoCheckout();
-        //    if (!isCheckedOut)
-        //        //throw new Exception("Something happen in server side");
-        //    return RedirectToAction("Index", "Home");
-        //}
-
-
         public async Task<IActionResult> Checkout()
         {
             bool isCheckedOut = await _cartRepo.DoCheckout();
             if (!isCheckedOut)
-            {
-                // throw new Exception("Something happen in server side");
-               // return RedirectToAction("Checkout", "Cart");
+                throw new Exception("Something happen in server side");
                 return RedirectToAction("Index", "Home");
-            }
-            // Add a return statement here in case isCheckedOut is true
-            return Ok(); // Or any other IActionResult as per your requirements
         }
 
 
     }
 }
+
+
+
+

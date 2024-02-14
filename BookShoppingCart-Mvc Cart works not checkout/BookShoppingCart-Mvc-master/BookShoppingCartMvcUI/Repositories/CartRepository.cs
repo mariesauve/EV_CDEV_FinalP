@@ -50,7 +50,7 @@ namespace BookShoppingCartMvcUI.Repositories
                         BookId = bookId,
                         ShoppingCartId = cart.Id,
                         Quantity = qty,
-                        UnitPrice = book.Price  // it is a new line after update
+                        UnitPrice = book.Price  
                     };
                     _db.CartDetails.Add(cartItem);
                 }
